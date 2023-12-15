@@ -1,0 +1,23 @@
+<!-- templates/layout.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Simple CRUD{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>{% block header %}Simple CRUD{% endblock %}</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home.home') }}">Home</a></li>
+            <li><a href="{{ url_for('user.add_user') }}">Add User</a></li>
+        </ul>
+    </nav>
+    <section>
+        {% block content %}{% endblock %}
+    </section>
+</body>
+</html>

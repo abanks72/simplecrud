@@ -1,0 +1,17 @@
+<!-- templates/update_user.html -->
+{% extends 'layout.html' %}
+
+{% block title %}Add User{% endblock %}
+
+{% block content %}
+    <h1>Update User</h1>
+    <form method="post" action="{{ url_for('user.update_user', user_id=user.id) }}">
+        <label for="username">Username:</label>
+        <input type="text" name="username" value="{{ user.username }}" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" value="{{ user.email }}" required><br>
+
+        <button type="submit">Update User</button>
+    </form>
+{% endblock %}

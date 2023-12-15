@@ -1,0 +1,22 @@
+<!-- templates/home.html -->
+{% extends 'layout.html' %}
+
+{% block title %}User List{% endblock %}
+
+{% block content %}
+    <h2>User List</h2>
+    <ul>
+        {% for user in users %}
+            <li>
+                {{ user.username }} - {{ user.email }}
+                <form method="post" action="{{ url_for('user.delete_user', user_id=user.id) }}" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+                <a href="{{ url_for('user.update_user', user_id=user.id) }}">Update</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+
+
